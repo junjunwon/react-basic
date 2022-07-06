@@ -14,21 +14,15 @@
 <script type="text/babel">
 	
 	const root = document.getElementById("root")
-	let counter = 0
-	function countUp(){
-		counter = counter + 1
-	}
-	function App() {
-		const [counter, setCounter] = React.useState(0)
-		const onClick = () => {
-			// setCounter(counter + 1) //rerendering(create component) of changed state <- 직접 설정해주기
-			setCounter((current) => current + 1) // <- 함수 전달해주기(언제나 현재 state를 얻도록 해주는 안전한 방법
-		}
 	
+	function App() {
 		return (
 			<div>
-			<h3>Total Click: {counter}</h3>
-			<button onClick={onClick}>Click me</button>
+			<h1>Super converter</h1>
+			<label for="minutes">Minutes</label>
+			<input id="minutes" placeholder="Minutes" type="number"/>
+			<label for="hours">Hours</label>
+			<input id="hours" placeholder="Hours" type="number"/>
 		</div> 
 		)
 	}
