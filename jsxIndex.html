@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div id="root">
+	</div>
+	<div>
+		
+	</div>
+</body>
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+	const root = document.getElementById("root")
+	const Title = () => (<h3 id="title" onMouseEnter={()=> console.log("mouse enter")}>hello i am a span</h3>)
+	const Button = () => (<button style={{backgroundColor: "tomato"}} onClick={() => console.log("i am clicked")}>Click me</button>)
+	// babel html tag should be UPPERCASE otherwise brower will understand as html tag
+	const Container = () => (
+		<div>
+			<button>hello this is html tag</button>
+			<Title /> 
+			<Button />
+		</div>
+	)
+		
+	
+	ReactDOM.render(<Container />, root) // span will be located in inside of root
+</script>
+</html>
+

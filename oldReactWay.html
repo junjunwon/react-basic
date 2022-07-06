@@ -3,7 +3,12 @@
 <body>
 	<div id="root">
 	</div>
-	<div>interactive한 어플리케이션에서 하는 작업들 모두가 event들을 감지하는 일</div>
+	<div>
+		interactive한 어플리케이션에서 하는 작업들 모두가 event들을 감지하는 일
+		<h2>
+			using createElement in REact is super difficult way and nobdy use it
+		</h2>
+	</div>
 </body>
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -15,7 +20,12 @@
 		"hello i am a span "); // insde create Element should be same with html tag
 	const btn = React.createElement(
 		"button", 
-		{onClick:() => console.log("i am clicked")}, 
+		{
+			onClick:() => console.log("i am clicked"),
+			style: {
+				backgroundColor : 'black', color:'white'
+			}
+		}, 
 		"buton"
 	)
 	const container = React.createElement("div", null, [h3, btn])
