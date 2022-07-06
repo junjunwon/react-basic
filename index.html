@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
 <body>
-	
+	<div id="root">
+	</div>
+	<div>interactive한 어플리케이션에서 하는 작업들 모두가 event들을 감지하는 일</div>
 </body>
 <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script>
+	const root = document.getElementById("root")
+	const h3 = React.createElement(
+		"h3", 
+		{id:"sexy-span", class:'abc', style:{color:'red'}, onMouseEnter: () => console.log("mouse enter")}, 
+		"hello i am a span "); // insde create Element should be same with html tag
+	const btn = React.createElement(
+		"button", 
+		{onClick:() => console.log("i am clicked")}, 
+		"buton"
+	)
+	const container = React.createElement("div", null, [h3, btn])
+	
+	ReactDOM.render(container, root) // span will be located in inside of root
+</script>
 </html>
-
-
-
-17
 
